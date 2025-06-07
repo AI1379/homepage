@@ -12,6 +12,7 @@ export default sidebar({
     },
   ],
   "/posts/": [
+    "/",
     {
       text: "博文",
       icon: "book",

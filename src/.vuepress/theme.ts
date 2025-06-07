@@ -143,8 +143,9 @@ export default hopeTheme(
         prefix: "fa6-solid:",
       },
     },
+    // hotReload: true,
   },
   {
-    custom: true,
+    // custom: true,
   }
 );
