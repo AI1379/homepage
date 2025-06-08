@@ -1,8 +1,8 @@
 ---
-title: 功能演示 
+title: 笔记
 index: false
 article: false
-icon: laptop-code
+icon: mdi:notebook-outline
 ---
 
 <Catalog />
