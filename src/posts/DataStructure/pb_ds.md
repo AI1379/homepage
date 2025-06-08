@@ -562,7 +562,7 @@ class priority_queue;
 
 #### Dijkstra & Prim
 
-![SPFA](D:\Projects\OITraining\Templates\pb_ds\SPFA.jpg)
+![SPFA](/assets/images/SPFA.jpg)
 
 OI 中堆最常见的应用之一就是图论里最短路和最小生成树。
 
