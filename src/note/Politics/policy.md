@@ -1,7 +1,6 @@
 ---
 date: 2025-06-07
 title: 形势与政策提纲
-article: false
 tag:
   - 思政
 category:

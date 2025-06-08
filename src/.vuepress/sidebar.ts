@@ -20,5 +20,15 @@ export default sidebar({
       prefix: "",
       link: "/posts/",
     },
-  ]
+  ],
+  "/exam/": [
+    "/",
+    {
+      text: "历年卷",
+      icon: "healthicons:i-exam-qualification",
+      prefix: "",
+      link: "/exam/",
+      children: "structure",
+    },
+  ],
 });
