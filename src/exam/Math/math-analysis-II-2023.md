@@ -25,7 +25,9 @@ category:
 
 ## 二
 
-求证：$$f(x) = \frac{x^2}{x^2 + (1-nx)^2}$$ 在 $[0, 1]$ 上点态收敛但是不一致收敛。
+求证：
+$$f(x) = \frac{x^2}{x^2 + (1-nx)^2}$$
+在 $[0, 1]$ 上点态收敛但是不一致收敛。
 
 ## 三
 
@@ -71,10 +73,14 @@ $$
 
 设函数 $f(x)$ 的傅里叶级数的部分和为 $S_n(x)$ ， $b_n(t) = \frac{1}{n} \sum_{k=0}^{n-1} S_k(x)$ ，即部分和的算术平均。
 
-1. 求证： $\forall\ x \in (-\pi, 0)\ \cup\ (0, \pi)$ ，有 $$\sum_{k=1}^n \sin(k+\frac{1}{2} ) x = \frac{\sin^2\frac{1}{2}nx}{\sin \frac{1}{2} x}$$
+1. 求证： $\forall\ x \in (-\pi, 0)\ \cup\ (0, \pi)$ ，有
+$$\sum_{k=1}^n \sin(k+\frac{1}{2} ) x = \frac{\sin^2\frac{1}{2}nx}{\sin \frac{1}{2} x}$$
 
-2. 求证： $$b_n(x) = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x+t) F_n(t) \text{d}t $$
+2. 求证：
+   $$b_n(x) = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x+t) F_n(t) \text{d}t $$
 
 3. 1. 求证： $F_n(x) \geq 0$
-   2. 求证： $$ \frac{1}{\pi}\int_{-\pi}^{\pi} F_n(x) \text{d}x = 1 $$
-   3. 求证： $$ \lim_{n\to\infty} \left[ \int_\delta^\pi F_n(x) \text{d}x + \int_{-\pi}^\delta F_n(x) \text{d}x \right] =0 ,\quad \forall\ \delta \in (0, \pi)$$
+   2. 求证：
+   $$\frac{1}{\pi}\int_{-\pi}^{\pi} F_n(x) \text{d}x = 1$$
+   3. 求证：
+   $$\lim_{n\to\infty} \left[ \int_\delta^\pi F_n(x) \text{d}x + \int_{-\pi}^\delta F_n(x) \text{d}x \right] =0 ,\quad \forall\ \delta \in (0, \pi)$$
