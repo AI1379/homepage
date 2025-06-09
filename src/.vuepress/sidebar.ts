@@ -31,4 +31,13 @@ export default sidebar({
       children: "structure",
     },
   ],
+  "/": [
+    {
+      text: "首页",
+      icon: "mdi:home",
+      prefix: "",
+      link: "/",
+      children: "structure"
+    }
+  ]
 });
