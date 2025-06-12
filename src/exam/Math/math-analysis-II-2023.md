@@ -4,8 +4,8 @@ title: 浙江大学2023学年数学分析 II 期末考试回忆卷
 tag:
   - 数学分析
 category:
-  - math
-  - exercises
+  - Math
+  - Exercises
 ---
 
 ## 试题
@@ -54,7 +54,7 @@ $$
 
 ### 五
 
-*（ Fejér 核）* 有 **Direchlet 核函数**：
+*（ Fejér 核）* 有 **Dirichlet 核函数**：
 
 $$
 K_m(t) =
@@ -117,19 +117,23 @@ I &= \lim_{x\to 1} \frac{\int_1^{x^2} \sin \left(t^2 \right)\text{d}t}{\int_1^{x
 \end{align*}
 $$
 
-4. 简单的 Maclaurin 级数问题
+4. 转换为幂级数的一个求和问题。
+首先有 $\sum_{n=1}^\infty (2n-1)x^n = 2\sum nx^n - \sum x^n$ ，考虑分开计算。
+对于第一部分逐项积分后容易得到和函数为 $\frac{x}{(1-x)^2}$ ，第二部分则为几何级数，和函数为 $\frac{x}{1-x}$ ，代入原式得和函数为 $\frac{x(1+x)}{(1-x)^2}$ ，代入 $x = \frac{1}{2}$ 得原级数为 $3$ 。
+
+5. 简单的 Maclaurin 级数问题
 
 $$
 \begin{align*}
 f(x) &= \frac{x}{x^2-2x-3} \\
      &= x \cdot \frac{1}{x+1} \cdot \frac{1}{x-3} \\
-     &= \frac{1}{4} x \left( \frac{1}{x+1} - \frac{1}{x-3} \right) \\
-     &= \frac{1}{4} x \left( \sum_{n=0}^{\infty} (-1)^n x^n + \sum_{n=0}^{\infty} \frac{1}{3^{n+1}} x^n \right)\\
-     &= \boxed{\sum_{n=1}^{\infty} \frac{1}{4} \left((-1)^{n-1} - \frac{1}{3^{n}}\right) x^n}
+     &= -\frac{1}{4} x \left( \frac{1}{x+1} - \frac{1}{x-3} \right) \\
+     &= -\frac{1}{4} x \left( \sum_{n=0}^{\infty} (-1)^n x^n + \sum_{n=0}^{\infty} \frac{1}{3^{n+1}} x^n \right)\\
+     &= \boxed{\sum_{n=1}^{\infty} \frac{1}{4} \left((-1)^{n} - \frac{1}{3^{n}}\right) x^n}
 \end{align*}
 $$
 
-5. 同样属于基础题。显然 $f(x)$ 是偶函数，从而可以展开为余弦级数。
+6. 同样属于基础题。显然 $f(x)$ 是偶函数，从而可以展开为余弦级数。
 
 $$
 \begin{align*}
@@ -230,7 +234,7 @@ $$
 $$
 从而 $\sum_{k=1}^n \cos(nx)$ 一致有界。
 
-另一方面， $\frac{n}{n^2+2024}$ 相对 $x$ 是常数，从而单调递减且一致趋于 $0$ 。由 Direchlet 判别法， $\sum_{n=1}^{\infty} f_n'(x)$ 内闭一致收敛。从而连续可导。
+另一方面， $\frac{n}{n^2+2024}$ 相对 $x$ 是常数，从而单调递减且一致趋于 $0$ 。由 Dirichlet 判别法， $\sum_{n=1}^{\infty} f_n'(x)$ 内闭一致收敛。从而连续可导。
 
 :::
 
@@ -329,5 +333,19 @@ $$
 \end{align*}
 $$
 得证。
+
+这一问还有另一解法：
+
+考虑固定 $\delta$ ，此时有： $\frac{1}{2}x \in [\frac{1}{2}\delta, \frac{1}{2}\pi]$ ，从而 $\sin(\frac{1}{2} x)$ 在这个区间上单调递增，从而有最小值 $m = \sin(\frac{1}{2}\delta)$ 。
+
+那么，对于 $F_n(x) = \frac{\sin^2(\frac{1}{2}nx)}{2n\sin^2(\frac{1}{2}x)}$ ，有如下缩放：
+$$
+F_n(x) \le \frac{1}{2n\sin^2{\frac12x}} \le \frac{1}{2m^2n}
+$$
+从而有：
+$$
+0 \le \int_0^\pi F_n(x)\text{d}x \le \frac{\pi-\delta}{2m^2n}
+$$
+不等式最右边在 $n\to\infty$ 时为 $0$ ，从而夹逼得到中间的积分极限为 $0$ 。得证。
 
 :::

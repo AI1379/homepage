@@ -4,8 +4,8 @@ title: 浙江大学2024学年数学分析 I 期中考试回忆卷
 tag:
   - 数学分析
 category:
-  - math
-  - exercises
+  - Math
+  - Exercises
 ---
 
 ## 一、求以下极限

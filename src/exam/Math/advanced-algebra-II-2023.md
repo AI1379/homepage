@@ -4,9 +4,13 @@ title: 浙江大学2023学年高等代数与解析几何 II 期末考试回忆�
 tag:
   - 高等代数
 category:
-  - math
-  - exercises
+  - Math
+  - Exercises
 ---
+
+> 注：试题来自 cc98
+
+<!--more-->
 
 ## 一、（ 15 分）
 
