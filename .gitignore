@@ -6,3 +6,5 @@ src/.vuepress/dist/
 
 # Symlink
 /assets
+
+*.pdf

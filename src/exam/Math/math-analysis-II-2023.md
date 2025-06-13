@@ -137,11 +137,11 @@ $$
 
 $$
 \begin{align*}
-a_0 &= \frac{1}{\pi}\int_{-\pi}^{\pi} (1-|x|)\text{d}x = 1 - \frac{\pi}{2} \\
-                                                                           \\
-a_n &= \frac{1}{\pi}\int_{-\pi}^{\pi} (1-|x|) \cos(nx) \text{d}x           \\
-    &= \frac{2}{\pi}\int_{0}^{\pi} (1-x) \cos(nx) \text{d}x                \\
-    &= \frac{2}{\pi}\cdot \frac{1 - (-1)^n}{n^2}                           \\
+a_0 &= \frac{1}{\pi}\int_{-\pi}^{\pi} (1-|x|)\text{d}x = 2 - \pi \\
+                                                                 \\
+a_n &= \frac{1}{\pi}\int_{-\pi}^{\pi} (1-|x|) \cos(nx) \text{d}x \\
+    &= \frac{2}{\pi}\int_{0}^{\pi} (1-x) \cos(nx) \text{d}x      \\
+    &= \frac{2}{\pi}\cdot \frac{1 - (-1)^n}{n^2}                 \\
 \end{align*}
 $$
 从而有：
