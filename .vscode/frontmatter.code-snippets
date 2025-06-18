@@ -1,0 +1,49 @@
+{
+	// Place your homepage workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Blog Frontmatter": {
+		"scope": "markdown",
+		"prefix": "frontmatter",
+		"body": [
+			"---",
+			"title: ${1:Title}",
+			"date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+			"tag:",
+			"  - ${2:tag1}",
+			"category:",
+			"  - ${3:category1}",
+			"headers-includes:",
+			"  - \\usepackage[utf8]{ctex}",
+			"  - \\usepackage[margin=1in]{geometry}",
+			"---"
+		],
+		"description": "Insert blog post frontmatter"
+	},
+	"Catalog Frontmatter": {
+		"scope": "markdown",
+		"prefix": "catalog-frontmatter",
+		"body": [
+			"---",
+			"title: ${1:Title}",
+			"index: false",
+			"article: false",
+			"icon: ${2:icon}",
+			"---"
+		],
+		"description": "Insert catalog item frontmatter"
+	}
+}
