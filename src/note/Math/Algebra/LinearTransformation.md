@@ -262,6 +262,7 @@ $$
 $$
 \mathrm{rank}(\mathcal{A}) + \mathrm{nullity}(\mathcal{A}) = \dim(V)
 $$
+且 $\mathrm{Im}(\mathcal{A})$ 的任意一组基的一组原像与 $\mathrm{Ker}(\mathcal{A})$ 的任意一组基合并成 $V$ 的一组基。
 
 :::
 
