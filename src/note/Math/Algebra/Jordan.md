@@ -415,8 +415,231 @@ $$
 
 ## Jordan-Chevalley 分解
 
+TODO: Jordan-Chevalley 分解
+
+## 最小多项式
+
+对于一个矩阵 $A$ ，由 Hamilton-Cayley 定理，我们知道它的特征多项式 $f(\lambda)$ 是一个关于 $\lambda$ 的多项式，且满足：
+$$
+f(A) = O
+$$
+更一般地，我们可以定义**零化多项式**为：
+
+::: tip 零化多项式
+
+对于一个矩阵 $A$ ，如果存在一个非零多项式 $p(\lambda)$ 使得 $p(A) = O$，则称 $p(\lambda)$ 是$A$ 的**零化多项式**， $A$ 被称作多项式 $p(\lambda)$ 的**根矩阵**。
+
+:::
+
+零化多项式有很多，我们关心的自然是其中最简单的一个。这样的多项式被称作**最小多项式**，它是所有零化多项式中次数最低的一个首一多项式。这样的多项式是唯一的，这可以通过带余除法容易的证明。
+
+接下来，我们给出一个简单的定理，它给出了最小多项式与其它零化多项式的关系：
+
+::: important
+
+设一个线性变换 $\mathcal{A}$ 的最小多项式为 $g_{\mathcal{A}}(\lambda)$，则 $p(\lambda)$ 是 $\mathcal{A}$ 的零化多项式当且仅当：
+$$
+g_{\mathcal{A}}(\lambda) \mid p(\lambda)
+$$
+
+:::
+
+同样，通过一个带余除法可以容易地证明。又因为有 Hamilton-Cayley 定理，**最小多项式一定是特征多项式的因式**。
+
+TODO：更多关于最小多项式的性质
+
 ## 多项式矩阵理论
 
+当一个矩阵的每一个元素都是 $\mathbb{F}[\lambda]$ 中的多项式时，我们称这样的矩阵为**多项式矩阵**，有时也称作 $\lambda$**-矩阵**。它和此前讨论的数字矩阵在很多方面有相似的性质，但是也有一些独特的性质。我们将看到这些独特的性质在 Jordan 标准形理论中的作用。
+
+### 初等变换与可逆性
+
+多项式矩阵的初等变换数字矩阵的初等变换并没有本质上的区别，同样也有初等矩阵的定义。此外，对于多项式的矩阵，我们也有相同的行列式的定义以及 Laplace 展开定理。
+
+多项式矩阵同样也有逆矩阵的定义，且逆矩阵的存在性也可以通过行列式来判断。具体而言，当一个多项式矩阵的行列式为一个**非零常数**时，这个多项式矩阵存在逆矩阵。
+
+当两个多项式矩阵可以通过初等变换化为同一个多项式矩阵时，我们称这两个多项式矩阵是**等价**的。这个概念将在此后多次用到。
+
+### 多项式矩阵的 Smith 标准形
+
+类似于数字矩阵的标准形，多项式矩阵也可以通过初等变换化为一个标准形，这种标准形被称作 **Smith 标准形**。它的定义如下：
+
+::: tip Smith 标准形
+
+对于一个多项式矩阵 $M(\lambda)$ ，若其为对角矩阵：
+$$
+M(\lambda) =
+\begin{pmatrix}
+d_1(\lambda) & & &\\
+& d_2(\lambda) &  & \\
+& & \ddots &  \\
+& & & d_r(\lambda) \\
+& & & & 0 & \\
+& & & & & \ddots & \\
+& & & & & & 0
+\end{pmatrix}
+$$
+且满足：
+$$
+d_i(\lambda) \mid d_{i+1}(\lambda),\ i = 1, 2, \ldots, r-1
+$$
+且均为首一多项式，则称这样的矩阵为**Smith 标准形**。
+
+:::
+
+它的存在性的证明比较复杂。首先，我们需要证明几个引理
+
+::: important Lemma
+
+设一个多项式矩阵 $A(\lambda)$ 的 $(1,1)$ 元素非零，且矩阵中至少有一个元素不能被 $a_{11}(\lambda)$ 整除，则 $A(\lambda)$ 等价于一个矩阵 $B(\lambda)$ ，且有 $0 \le \mathrm{deg}(b_{11}(\lambda)) < \mathrm{deg}(a_{11}(\lambda))$ 。
+
+:::
+
+::: details Proof
+
+TODO: Lemma 1 of Smith Normal Form
+
+:::
+
+::: important Lemma
+
+对于任意一个非零的多项式矩阵 $A(\lambda)$ ，它等价于一个 $(1,1)$ 元素非零且可以整除矩阵中所有元素的多项式矩阵 $B(\lambda)$。
+
+:::
+
+::: details Proof
+
+TODO: Lemma 2 of Smith Normal Form
+
+:::
+
+通过这两个引理，我们可以证明 Smith 标准形的存在性定理：
+
+::: important Smith 标准形的存在性
+
+对于任意一个多项式矩阵 $A(\lambda)$ ，存在一个等价于 $A(\lambda)$ 的 Smith 标准形矩阵 $S(\lambda)$。
+
+:::
+
+::: details Proof
+
+TODO: Smith Normal Form Existence
+
+:::
+
+### 行列式因子、不变因子与初等因子
+
+首先给出定义：
+
+::: tip 行列式因子
+
+对于一个秩为 $r$ 的多项式矩阵 $A(\lambda)$ ，它的所有 $k$ 阶非零子式的首项系数为 $1$ 的最大公因式 $D_k(\lambda)$ 称为 $A(\lambda)$ 的 **$k$ 阶行列式因子**。它是多项式矩阵的初等变换的不变量。
+
+:::
+
+::: details Proof
+
+只需证明三类初等变换不会改变行列式因子即可。
+
+:::
+
+又因为一个多项式矩阵总是等价于它的 Smith 标准形，因此它的行列式因子可以直接从 Smith 标准形中读出。另一方面，因为行列式因子被矩阵本身唯一决定，因此可以自然地推出：**一个多项式矩阵的 Smith 标准形是唯一的**。
+
+具体来说，对于一个多项式矩阵 $A(\lambda)$ ，其 Smith 标准形为
+$$
+S(\lambda) =
+\begin{pmatrix}
+d_1(\lambda) & & &\\
+& d_2(\lambda) &  & \\
+& & \ddots &  \\
+& & & d_r(\lambda) \\
+& & & & O_{(m-r) \times (n-r)} \\
+\end{pmatrix}_{m \times n}
+$$
+则可以确定这个矩阵的行列式因子为：
+$$
+d_1(\lambda), d_1(\lambda) d_2(\lambda), \ldots, d_1(\lambda) d_2(\lambda) \cdots d_r(\lambda)
+$$
+这里的 $d_i(\lambda)$ 则称作 $A(\lambda)$ 的**不变因子**。特别地，当 $\mathbb{F} = \mathbb{C}$ 时，不变因子总是可以分解为若干个一次因子的幂的乘积，这些一次因子的幂被称作**初等因子**，相同的按照重数计数。从而可以轻松地给出从初等因子组构造不变因子的方法。又因为不变因子和行列式因子都是初等变换的不变量，于是初等因子也是初等变换的不变量，且有定理：**两个复数域上的多项式矩阵等价当且仅当秩与初等因子集均相等**。在后面我们将看到，初等因子与矩阵的 Jordan 标准形有着密切的关系。
+
+### 初等因子的计算
+
+TODO: Calculate elementary divisors
+
+### 数字矩阵的相似的刻画
+
+在这一节我们将给出一个重要的定理，它描述了数字矩阵的相似与对应的特征矩阵的等价之间的关系。
+
+首先，我们定义一个数字矩阵的**特征矩阵**：
+
+::: tip 特征矩阵
+
+设 $A$ 是一个 $n \times n$ 的数字矩阵，则它的**特征矩阵**定义为：
+$$
+A(\lambda) = \lambda E - A
+$$
+
+:::
+
+然后，照例，我们给出两个引理：
+
+::: important Lemma
+
+设有 $n\times n$ 的数字矩阵 $A$ 和 $B$ ，若存在数字矩阵 $P$ 和 $Q$ 使得：
+$$
+\lambda E - A = P(\lambda E - B)Q
+$$
+则 $A$ 和 $B$ 相似。
+
+:::
+
+::: details Proof
+TODO: Proof of Lemma 1 of Similarity of Matrices
+:::
+
+::: important Lemma
+
+对于 $n$ 阶数字方阵 $A$ 和多项式矩阵 $U(\lambda)$ ，存在唯一的多项式矩阵 $Q(\lambda)$ 和 $R(\lambda)$ 和数字矩阵 $U_Q$ 和 $U_R$ 使得：
+$$
+U(\lambda) = (\lambda E - A) Q(\lambda) + U_Q \\
+U(\lambda) = R(\lambda) (\lambda E - A) + U_R
+$$
+这有时也被视作多项式矩阵的带余除法。
+
+:::
+
+::: details Proof
+TODO: Proof of Lemma 2 of Similarity of Matrices
+:::
+
+通过这两个引理，我们可以给出一个数字矩阵相似的充分必要条件：
+
+::: important 数字矩阵相似的充分必要条件
+
+设 $A$ 和 $B$ 是两个 $n \times n$ 的数字矩阵，则 $A$ 和 $B$ 相似当且仅当它们的特征矩阵等价
+
+:::
+
+::: details Proof
+
+先证必要性。
+
+相似，从而存在可逆矩阵 $T$ 使得 $A = T^{-1} B T$ ，从而有：
+$$
+\lambda E - A = \lambda E - T^{-1} B T = T^{-1} (\lambda E - B) T
+$$
+从而特征矩阵 $\lambda E - A$ 与 $\lambda E - B$ 等价。
+
+再证充分性
+
+TODO: The proof of sufficiency of Similarity of Matrices
+
+:::
+
+从这个定理可以得知，数字矩阵的一些性质可以通过它的特征矩阵的性质来表现。对于数字矩阵，我们将它们的行列式因子、不变因子与初等因子定义为它的特征矩阵的行列式因子、不变因子与初等因子。
+
 ## Jordan 标准形的唯一性
+
+
 
 ## Jordan 标准形的计算
